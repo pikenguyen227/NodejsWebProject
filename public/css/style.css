@@ -1,0 +1,157 @@
+/* CSS Document */
+
+.loginBackground
+{ 
+  background-color:#FDC58F;
+ /*
+  background: url(Images/loginpagebackground.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  */
+}
+
+
+.centerDivSection {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  margin: auto;
+  
+  border-style:solid;
+  border-color: #FDC58F;
+  border-radius: 20px;
+  
+  height: 520px;
+  width: 320px;
+
+  background: url("/images/loginpageDivBackground.jpg") no-repeat center center fixed; 
+  background-size: 320px 520px;
+  
+
+    
+}
+
+.companyText{
+  position:absolute;
+  bottom: 52px;
+  left: 6px;
+  width:100%;
+  text-align: center;
+}
+
+.loginForm{
+  position:absolute;
+  left: 50px;
+  top: 60px;
+}
+
+.transparentTextInput {
+  background-color: rgba(0,0,0,0);
+  border: none;
+  border-bottom: solid;
+  border-color: #FDC58F;
+  
+  width: 160px;
+  height: 20px;
+  font-size: 14px;
+  
+  padding: 5px;
+  
+  color: white;
+  outline: none;
+}
+
+
+
+.btn{
+  position: absolute;
+  display: inline-block;
+}
+
+.btnWithPadding{
+  padding: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.btn:hover{
+  color:#E67015;
+}
+
+.Login {  
+  right: 4px;
+  
+    border:solid;
+    background-color: #FDC58F;
+  border-color: #FDC58F;
+    font-size: 16px;
+    cursor: pointer;
+  
+  color:#502706;
+  
+}
+
+
+.ForgotPassword {
+  
+  left: 0px;
+  text-align: left;
+
+    border:none;
+    background-color: inherit;
+    font-size: 10px;
+    cursor: pointer;
+    display: inline-block;
+  
+  color: #A9931B;
+}
+
+.Register {
+  left: 128px;
+  bottom: 124px;
+  
+    border:none;
+    background-color: inherit;
+    font-size: 20px;
+    cursor: pointer;
+    display: inline-block;
+  
+  color:#532905;
+}
+
+.notAMemberText{
+  position: absolute;
+  left: 67px;
+  bottom: 155px;
+  text-align: center;
+  color: #A9931B;
+}
+
+.errorText{
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  color: red;
+  
+}
+
+::placeholder {
+    color: white;
+    opacity: 1; /* Firefox */
+  font-size: 14px;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+  font-size: 14px;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+}
+
