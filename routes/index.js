@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-// Get Homepage
+// Get Initial page
 router.get('/', function(req, res) {
-	res.render('index');
+	res.render('login');
 });
 
 module.exports = router;

@@ -1,0 +1,212 @@
+/* CSS Document */
+
+.bodyBackground
+{
+  background-color:#4f868e;
+   overflow: hidden;
+}
+
+.container
+{ 
+  display: block;
+  position: absolute;
+
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  margin: auto;
+
+  height: 100%;
+  width: 100%
+}
+
+
+.loginContainer {
+  display: block;
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  max-height: 100%;
+  max-width: 70%;
+  min-width: 100px;
+
+  margin: auto;
+
+  border-top-style: solid;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-bottom-style: none;
+  border-radius: 50px 50px 0px 0px;
+  border-color: #4f868e;
+
+ background: url(/images/loginscreen.jpg) no-repeat center fixed; 
+ background-size: cover;
+}
+
+.loginFormContainer {
+  display: block;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #522706;
+  border-color: #FDC58F;
+  height: 152px;
+  width: 199px;
+  border-radius: 10px 10px 10px 10px;
+  opacity: 0;
+}
+
+.loginForm{
+  position:relative;
+  top: 10px;
+  left: 10px;
+  width: 100%;
+}
+
+.login {  
+  top: 45px;
+  left: 105px;
+  border:solid;
+  background-color: #FDC58F;
+  border-color: #FDC58F;
+  font-size: 16px;
+  cursor: pointer;
+  color:#502706;
+  border-radius: 0px 0px 10px 10px;
+  
+}
+
+.login:hover{
+  background-color: #E67015;
+  border-color: #E67015; 
+}
+
+.register {  
+  top: -45px;
+  left: 0px;
+  border:solid;
+  background-color: #AD951E;
+  border-color: #AD951E;
+  font-size: 14px;
+  cursor: pointer;
+  color:#502706;
+  border-radius: 10px 10px 0px 0px;
+  
+}
+
+.register:hover{
+  background-color: #E67015;
+  border-color: #E67015;
+}
+
+.forgotPassword {
+  
+  top: 50px;
+  left: 5px;
+  text-align: left;
+
+  border:none;
+  background-color: inherit;
+  font-size: 10px;
+  cursor: pointer;
+  display: inline-block;
+  
+  color: #A9931B;
+}
+
+.forgotPassword:hover{
+  color:#E67015;
+}
+
+
+.companyNameContainer{
+  position: absolute;
+  bottom: 0px;
+  margin:  0 auto;
+  width: 100%;
+  background-color: #522706;
+  opacity: 0;
+}
+
+.companyName{
+  position: relative;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin:  0 auto;
+  width: 100%;
+  font-size: 20px;
+  color: #2c7af7;
+  text-align: center;
+  
+}
+
+.errorContainer{
+  position: absolute;
+  bottom: 25px;
+  margin:  0 auto;
+  width: 100%;
+  opacity: 0;
+}
+
+.error{
+  position: relative;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin:  0 auto;
+  width: 100%;
+  font-size: 15px;
+  color: red;
+  text-align: center;
+  
+}
+
+.transparentTextInput {
+  background-color: rgba(0,0,0,0);
+  border: none;
+  border-bottom: solid;
+  border-color: #FDC58F;
+  
+  width: 175px;
+  height: 20px;
+  font-size: 14px;
+  
+  padding: 5px;
+  
+  color: white;
+  outline: none;
+}
+
+::placeholder {
+  color: white;
+  opacity: 1; /* Firefox */
+  font-size: 14px;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+  font-size: 14px;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+}
+
+
+
+
+
+
+
+

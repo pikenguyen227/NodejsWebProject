@@ -1,1 +1,65 @@
-REGISTER
+<script type="text/javascript" src="/js/shared.js"></script>
+<script type="text/javascript" src="/js/register.js"></script>
+<link rel="stylesheet" href="/css/register.css" />
+<link rel="stylesheet" href="/css/style.css" />
+
+
+<body class="bodyBackground">
+
+<div class="container">
+	<div class="registerContainer" id ="registerContainer">
+		<div class="websiteTitleContainer" id ="websiteTitleContainer"><h1 class="websiteTitle">The Learning Hub</h1></div>
+
+		<div class="registerFormContainer" id="registerFormContainer">
+			<br>
+			<form class="registerForm" method="post" action="/users/register" id="registerForm">	  
+				<div></div>
+			  	<input class="transparentTextInput" type="text" placeholder="Email" id="registerNameField" name="email"> <br> 
+			  	<input class="transparentTextInput" type="password" placeholder="Password" id="registerPasswordField" name='password'> <br> 
+			  	<input class="transparentTextInput" type="password" placeholder="Retype Password" id="retypeRegisterPasswordField" name ='retypepassword'> <br> 
+
+			  	<div class="dropdown">
+				<button type="button" id="school" onclick="myFunction('schoolDropdown')" class="dropbtn">School</button>
+				  <div id="schoolDropdown" class="dropdown-content">
+				    <input name="school" type="text" placeholder="Search.." id="schoolInput" onkeyup="filterFunction('schoolInput','schoolDropdown')">
+				    <a href="#" onclick="changeText('school','Washington State University')">Washington State University</a>
+				    <a href="#" onclick="changeText('school','University Of Washington')">University Of Washington</a>
+				    <a href="#" onclick="changeText('school','Seattle Central')">Seattle Central</a>
+				  </div>
+				</div> <br>
+
+				<div class="dropdown">
+					<button type="button" id="degree" onclick="myFunction('degreeDropdown')" class="dropbtn">Degree</button>
+					  <div id="degreeDropdown" class="dropdown-content">
+					    <input name="degree" type="text" placeholder="Search.." id="degreeInput" onkeyup="filterFunction('degreeInput','degreeDropdown')">
+					    <a href="#" onclick="changeText('degree','Bachelor Degree in')">Bachelor Degree in</a>
+					    <a href="#" onclick="changeText('degree','Associate Degree in')">Associate Degree in </a>
+					  
+					 </div>
+				</div> <br>
+
+				<div class="dropdown">
+					<button type="button" id="major" onclick="myFunction('majorDropdown')" class="dropbtn">Major</button>
+					  <div id="majorDropdown" class="dropdown-content">
+					    <input name="major" type="text" placeholder="Search.." id="majorInput" onkeyup="filterFunction('majorInput','majorDropdown')">
+					    <a href="#" onclick="changeText('major','Computer Science')">Computer Science</a>
+					  
+					  </div>
+				</div>
+
+				<div class="registerButtonContainer"><button type="button" class="registerButton" onclick="registerIsClicked()">Register</button></div>
+
+				<div class="backButtonContainer "><button type="button" class="backButton" onclick="backIsClickded()">back</button></div>
+				
+				{{#if errors}}
+				      	<div class="errorContainer" id="errorContainer"><h1 class="error">{{errors.0.msg}}</h1></div>
+				{{/if}}
+				
+			</form>
+
+		</div>
+
+	</div>
+
+	<div class="loadingContainer" id="loadingContainer"></div>
+</div>
