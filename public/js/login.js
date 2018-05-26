@@ -1,6 +1,9 @@
+var defaultDuration = 1000;
+var defaultEnterTime = 3000;
+
 function registerIsClicked()
 {
-  performExitAnimation()
+  performExitAnimation();
   setTimeout(function() 
 	{ 
     if (document.location.href.includes('/users'))
@@ -11,12 +14,15 @@ function registerIsClicked()
     {
 		  document.location.href = 'users/register'
     }
-	}, 390);
+	}, defaultDuration);
 }
 
 function loginIsClicked()
 {
   performExitAnimation();
+
+ 
+
   setTimeout(function() 
   { 
       document.getElementById('loginForm').submit();
@@ -25,44 +31,78 @@ function loginIsClicked()
       {
         disableElement(['email','password'][i], false);
       }
-  }, 390);
+  }, defaultDuration);
 }
 
 function performExitAnimation()
 {
-  moveTo("loginContainer",100,638,1,5,0);
+  
+  runAnimation('loginContainer','slideDownToBottom',0, function(){
+    $('#' + 'loginContainer').removeClass('animated ' + 'slideInToCenter');
+  }, function(){});
 
-  fadeOut("loginFormContainer", 20, 0, ['register','login','nameField','passwordField','forgotPassword']);
-  fadeIn("websiteTitleContainer", 40, 0, []);
+  runAnimation('loginFormContainer','fadeOut',0, function(){
+    disableElement("register", true);
+    disableElement("login", true);
+    disableElement("forgotPassword", true);
+  }, function(){}); 
 
-  fadeOut("companyNameContainer", 5, 0,[]);
-  fadeOut("errorContainer", 5, 0,[]);
- // document.getElementById('loginContainer').style.minHeight = '0';
+  runAnimation('registerButtonContainer','fadeOut',0, function(){});
+
+  runAnimation('websiteTitleContainer','fadeIn',0, function(){
+     $('#' + 'websiteTitleContainer').removeClass('animated ' + 'fadeOut');
+     $('#' + 'websiteTitleContainer').css('opacity', '1.0');
+  },function(){});     
+
+  runAnimation('errorContainer','fadeOut',0, function(){
+    $('#' + 'errorContainer').removeClass('animated ' + 'fadeIn');
+  },function(){});
+}
+
+function performEnterAnimation()
+{
+  runAnimation('loginContainer','slideInToCenter',defaultEnterTime, function(){
+    $('#' + 'loginContainer').css('top', '15%');
+    $('#' + 'loginContainer').css('min-height', '350px');
+  }, function(){});
+
+  runAnimation('loginFormContainer','fadeIn',defaultEnterTime + 500, function(){
+    $('#' + 'loginFormContainer').css('opacity', '1.0');
+    disableElement("register", false);
+    disableElement("login", false);
+    disableElement("email", false);
+    disableElement("password", false);
+    disableElement("forgotPassword", false);
+  }, function(){});
+
+  runAnimation('registerButtonContainer','fadeIn',defaultEnterTime + 500, function(){
+    $('#' + 'registerButtonContainer').css('opacity', '1.0');
+  }, function(){});   
+
+  runAnimation('errorContainer','fadeIn',defaultEnterTime + 500, function(){
+  },function(){});
 }
 
 window.onload = function() {
-  	moveTo("loginContainer",580,100,1,-5,3000);
+  initialAnimationWhenPageLoaded();
+  performEnterAnimation();
+}
 
-  	scaleUp("loadingContainer", 1.5, 0.5, 0.004, 0);
-  	fadeIn("loadingContainer", 0, 0, []);
-  	fadeOut("loadingContainer", 20, 3000, []);
 
-  	fadeIn("loginFormContainer", 20, 3500, ['register','login','email','password','forgotPassword']);
-  	fadeOut("websiteTitleContainer", 40, 3000,[]);
 
-  	fadeIn("companyNameContainer", 20, 3500,[]);
-  	fadeIn("errorContainer", 20, 3500,[]);
+/*
+$('#' + target).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+          $('#' + target).removeClass('animated ' + animation);
+        });
+        */
 
-  	disableElement("register", true);
-  	disableElement("login", true);
-  	disableElement("nameField", true);
-  	disableElement("passwordField", true);
 
-  	setTimeout(function() 
-	{ 
-  		document.getElementById('loginContainer').style.minHeight = '280px';
-  	}, 4500);
-};
+
+
+
+
+
+
 
 
 

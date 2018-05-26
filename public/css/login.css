@@ -19,7 +19,7 @@
   margin: auto;
 
   height: 100%;
-  width: 100%
+  width: 100%;
 }
 
 
@@ -46,6 +46,7 @@
 
  background: url(/images/loginscreen.jpg) no-repeat center fixed; 
  background-size: cover;
+
 }
 
 .loginFormContainer {
@@ -57,10 +58,27 @@
   right: 0;
   bottom: 0;
   background-color: #522706;
-  border-color: #FDC58F;
+  border-color: rgb(0,0,0,0);
   height: 152px;
   width: 199px;
   border-radius: 10px 10px 10px 10px;
+  opacity: 0;
+  z-index: 2;
+}
+
+.registerButtonContainer{
+  display: block;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 199px;
+  height: 152px;
+  z-index: 1;
+
   opacity: 0;
 }
 
@@ -73,15 +91,13 @@
 
 .login {  
   top: 45px;
-  left: 105px;
+  left: 106px;
   border:solid;
   background-color: #FDC58F;
   border-color: #FDC58F;
   font-size: 16px;
-  cursor: pointer;
   color:#502706;
-  border-radius: 0px 0px 10px 10px;
-  
+  border-radius: 0px 0px 10px 10px;  
 }
 
 .login:hover{
@@ -90,17 +106,17 @@
 }
 
 .register {  
-  top: -45px;
-  left: 0px;
+  top: -33px;
+  left: 10px;
   border:solid;
   background-color: #AD951E;
   border-color: #AD951E;
   font-size: 14px;
-  cursor: pointer;
   color:#502706;
   border-radius: 10px 10px 0px 0px;
-  
+  z-index: 1;
 }
+
 
 .register:hover{
   background-color: #E67015;
@@ -116,15 +132,16 @@
   border:none;
   background-color: inherit;
   font-size: 10px;
-  cursor: pointer;
   display: inline-block;
   
   color: #A9931B;
+
 }
 
 .forgotPassword:hover{
   color:#E67015;
 }
+
 
 
 .companyNameContainer{

@@ -1,0 +1,43 @@
+<script type="text/javascript" src="/js/shared.js"></script>
+<script type="text/javascript" src="/js/student_dashboard.js"></script>
+<link rel="stylesheet" href="/css/student_dashboard.css" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/animate.css" />
+
+<body class="bodyBackground">
+
+<div class="container" id = "container">
+	
+	<div class="topContainter"> 
+
+		<div class = "accountContainter" id="accountContainter" >
+			<div class="dropdown">
+				<button type="button" id="account" onclick="myFunction('accountDropdown')" class="dropbtn">{{user.email}} ↓</button>
+				  <div id="accountDropdown" class="dropdown-content">
+				    <a href="#">Your account</a>
+				    <a onclick="logoutIsClicked()">Logout</a>
+				  </div>
+			</div> 
+		</div>
+
+		<div class="navigationContainter" id="navigationContainter"> 
+			<button type='button' class="btn btnWithPadding categoryButton classPosition" id="classCategoryButton" onclick="classIsClicked()" disabled="disabled">Classes</button>
+			<button type='button' class="btn btnWithPadding categoryButton schoolPosition" id="schoolCategoryButton" onclick="schoolIsClicked()" disabled="disabled">School</button>
+			<button type='button' class="btn btnWithPadding categoryButton advisorPosition" id="advisorCategoryButton" onclick="advisorIsClicked()" disabled="disabled">Advisor</button>	
+		</div>
+
+	</div>
+
+	<div class="boardContainer" id ="boardContainer">
+		<div class="websiteTitleContainer" id ="websiteTitleContainer"><h1 class="websiteTitle">The Learning Hub</h1></div>
+
+		<div class="bottomContainer" id = "bottomContainer">
+			<button type='button' class="btn btnWithPadding addButton" id="addButton" onclick="addIsClicked()">Add cards</button>
+		</div>
+
+		<div class="cardAreaContainer" id="cardAreaContainer"><h1>card goes here</h1></div>
+				
+	</div>
+	<div class="loadingContainer" id="loadingContainer"></div>
+
+</div>

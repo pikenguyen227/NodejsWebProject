@@ -2,6 +2,7 @@
 <script type="text/javascript" src="/js/shared.js"></script>
 <link rel="stylesheet" href="/css/login.css" />
 <link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/animate.css" />
 
 <body class="bodyBackground">
 
@@ -12,13 +13,18 @@
 		
 		<div class="loginFormContainer" id="loginFormContainer">
 			<form class="loginForm" method="post" action="/users/login" id="loginForm">	  
-			  	<input class="transparentTextInput" type="text" placeholder="Email" id="email" name='email'> <br>  
-			  	<input class="transparentTextInput" type="password" placeholder="Password" id="password" name='password'> <br>
-			  	<button type='button' class="btn btnWithPadding forgotPassword" id="forgotPassword">Forgot Password</button>
-				<button type='button' class="btn login" id="login" onclick="loginIsClicked()" >Login</button>
-				<button type='button' class="btn register" id="register" onclick="registerIsClicked()"><a style="text-decoration: none; color:#502706;" >Register</a></button>
+			  	<input class="transparentTextInput" type="text" placeholder="Email" id="email" name='email' disabled="disabled"> <br>  
+			  	<input class="transparentTextInput" type="password" placeholder="Password" id="password" name='password' disabled="disabled"> <br>
+			  	<button type='button' class="btn btnWithPadding forgotPassword" id="forgotPassword" disabled="disabled">Forgot Password</button>
+				<button type='button' class="btn login" id="login" onclick="loginIsClicked()" disabled="disabled" >Login</button>
 			</form>
 		</div>
+
+		<div class="registerButtonContainer" id = "registerButtonContainer">
+			<button type='button' class="btn register" id="register" onclick="registerIsClicked()" disabled="disabled"><a style="text-decoration: none; color:#502706;">Register</a></button>
+		</div>
+
+		
 		<div class="companyNameContainer" id="companyNameContainer"><h1 class="companyName"><b>SCALE</b></h1></div>	
 
 		{{#if error_msg}}
@@ -29,9 +35,8 @@
 			<div class="errorContainer" id="errorContainer"><h1 class="error">{{error}}</h1></div>
 		{{/if}}
 
-
-		
 	</div>
+
 
 	<div class="loadingContainer" id="loadingContainer"></div>
 

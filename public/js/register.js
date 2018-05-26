@@ -1,40 +1,92 @@
-
 var backupText = "";
 var isSchoolExpanded = false;
 var isMajorExpanded = false;
 var isDegreeExpanded = false;
 
-function changeCursor(list)
-{
-  var i;
-  for (i = 0; i < list.length; i++) { 
-    document.getElementById(list[i]).style.cursor = 'pointer'
-  }
-}
+var defaultDuration = 1000;
+var defaultEnterTime = 3000;
 
 window.onload = function() {
-  	moveTo("registerContainer",580,100,1,-5,3000);
+  initialAnimationWhenPageLoaded();
+  performEnterAnimation();
+}
 
-  	scaleUp("loadingContainer", 1.5, 0.5, 0.004, 0);
-  	fadeIn("loadingContainer", 0, 0, []);
-  	fadeOut("loadingContainer", 20, 3000, []);
+function performEnterAnimation()
+{
+  runAnimation('registerContainer','slideInUp',defaultEnterTime, function(){
+    $('#' + 'registerContainer').css('top', '15%');
+    $('#' + 'registerContainer').css('min-height', '350px');
+  }, function(){});
 
-    fadeIn("registerFormContainer", 20, 3500, ['registerNameField','registerPasswordField','retypeRegisterPasswordField','school','degree','major','registerButton','backButton']);
-    fadeOut("websiteTitleContainer", 40, 3000,[]);
+  runAnimation('registerFormContainer','fadeIn',defaultEnterTime + 500, function(){
+    $('#' + 'registerFormContainer').css('opacity', '1.0');
+    disableElement("registerNameField", false);
+    disableElement("registerPasswordField", false);
+    disableElement("retypeRegisterPasswordField", false);
+    disableElement("school", false);
+    disableElement("degree", false);
+    disableElement("major", false);
+    disableElement("registerButton", false);
+    disableElement("backButton", false);
+  },function(){});
 
-    fadeIn("errorContainer", 20, 3500,[]);
+  runAnimation('errorContainer','fadeIn',defaultEnterTime + 500, function(){
+  },function(){});
+}
 
-    changeCursor(['registerNameField'])
+function performExitAnimation()
+{
+  runAnimation('websiteTitleContainer','fadeIn',0, function(){
+    $('#' + 'websiteTitleContainer').removeClass('animated ' + 'fadeOut');
+    $('#' + 'websiteTitleContainer').css('opacity', '1.0');
+  }, function(){});  
 
+  runAnimation('registerContainer','slideDownToBottom',0, function(){
+    $('#' + 'registerContainer').removeClass('animated ' + 'slideInToCenter');
+  }, function(){});
+
+  runAnimation('registerFormContainer','fadeOut',0, function(){
+    $('#' + 'registerFormContainer').removeClass('animated ' + 'fadeIn');
+    $('#' + 'registerFormContainer').css('opacity', '0.0');
     disableElement("registerNameField", true);
     disableElement("registerPasswordField", true);
-    disableElement("retypeRegisterPasswordField'", true);
+    disableElement("retypeRegisterPasswordField", true);
     disableElement("school", true);
     disableElement("degree", true);
     disableElement("major", true);
     disableElement("registerButton", true);
     disableElement("backButton", true);
-};
+  },function(){});
+
+  runAnimation('errorContainer','fadeOut',0, function(){
+    $('#' + 'errorContainer').removeClass('animated ' + 'fadeIn');
+  },function(){});
+}
+
+
+function backIsClickded()
+{
+  performExitAnimation();
+  setTimeout(function() 
+  { 
+    document.location.href = '/'
+  }, defaultDuration);
+}
+
+function registerIsClicked()
+{
+    performExitAnimation()
+    setTimeout(function() 
+    { 
+      document.getElementById('registerForm').submit();
+      var i;
+      for(i =0; i < ['registerNameField','registerPasswordField','retypeRegisterPasswordField'].length; i++)
+      {
+        disableElement(['registerNameField','registerPasswordField','retypeRegisterPasswordField'][i], false);
+      }
+    }, defaultDuration);
+
+}
 
 
 /* When the user clicks on the button,
@@ -129,38 +181,6 @@ function changeText(elementID,theText)
 
 }
 
-function backIsClickded()
-{
-  moveTo("registerContainer",100,580,1,5,0);
-  
-  fadeOut("registerFormContainer", 20, 0, ['registerNameField','registerPasswordField','retypeRegisterPasswordField','school','degree','major','registerButton','backButton']);
-  fadeIn("websiteTitleContainer", 40, 0, []);
-/*
-    fadeOut("errorContainer", 5, 0,[]);
-    */
-    setTimeout(function() 
-  { 
-    document.location.href = '/'
-  }, 390);
-}
-
-function registerIsClicked()
-{
-    moveTo("registerContainer",100,638,1,5,0);
-    fadeOut("registerFormContainer", 20, 0, ['school','degree','major','registerButton','backButton']);
-    fadeIn("websiteTitleContainer", 40, 0, []);
-    fadeOut("errorContainer", 5, 0,[]);
-    setTimeout(function() 
-    { 
-      document.getElementById('registerForm').submit();
-      var i;
-      for(i =0; i < ['registerNameField','registerPasswordField','retypeRegisterPasswordField'].length; i++)
-      {
-        disableElement(['registerNameField','registerPasswordField','retypeRegisterPasswordField'][i], false);
-      }
-    }, 390);
-
-}
 
 function filterFunction(elementID, dropdown) {
     var input, filter, ul, li, a, i;

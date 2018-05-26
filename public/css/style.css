@@ -13,6 +13,7 @@
   background-size: 50px 50px;
 
   opacity: 0;
+  z-index: -1;
 }
 
 .websiteTitleContainer{
@@ -52,3 +53,7 @@
   padding-top: 5px;
   padding-bottom: 5px;
 }
+
+
+
+

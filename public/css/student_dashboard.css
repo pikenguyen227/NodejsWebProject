@@ -1,0 +1,507 @@
+/* CSS Document */
+
+.bodyBackground
+{
+  background-color:#4f868e;
+   overflow: hidden;
+}
+
+.container
+{ 
+  display: block;
+  position: absolute;
+
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  margin: auto;
+
+  height: 100%;
+  width: 100%;
+}
+
+
+.boardContainer {
+  display: block;
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  max-height: 100%;
+  max-width: 70%;
+  min-width: 100px;
+
+  margin: auto;
+
+  border-top-style: solid;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-bottom-style: none;
+  border-radius: 50px 50px 0px 0px;
+  border-color: #4f868e;
+
+
+  background-color: black;
+  background-size: cover;
+  z-index: 1;
+  z-index: 0;
+
+}
+
+.topContainter {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
+
+  width: 100%;
+  height: 20%;
+  min-height: 105px;
+}
+
+
+
+.categoryButton{
+
+  display: block;
+  position: absolute;
+  bottom: 0;
+  border:solid;
+  background-color: #AD951E;
+  border-color: black;
+  font-size: 14px;
+  cursor: pointer;
+  color:#502706;
+  border-radius: 10px 10px 0px 0px;
+  min-height: 80%;
+  color: white;
+  width: 100px;
+
+}
+
+.categoryButton:hover{
+  min-height: 100%
+}
+
+.classPosition{
+  background-color: blue;
+  border-color: blue;
+  left:0;
+}
+
+.schoolPosition{
+  background-color: red;
+  border-color: red;
+  left: 95px;
+}
+
+.advisorPosition{
+  background-color: green;
+  border-color: green;
+  left: 190px;
+}
+
+
+.navigationContainter {
+  display: block;
+  position: absolute;
+
+  left: 5%;
+
+  bottom: 0;
+  margin: auto;
+
+  width: 296px;
+  height: 50px;
+  background-color: #FDC58F;
+
+  border-top-style: solid;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-bottom-style: none;
+  border-radius: 10px 10px 0px 0px;
+  border-color: #FDC58F;
+
+  opacity: 0;
+}
+
+.accountContainter {
+  display: block;
+  position: absolute;
+  top: -100px;
+  right: 0;
+  margin: auto;
+
+  min-width: 300px;
+  height: 30px;
+  background-color: #FDC58F;
+
+  border-top-style: none;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-radius: 0px 0px 10px 10px;
+  border-color: #FDC58F;
+  z-index: 1;
+}
+
+.dropbtn {
+    color: #4f868e;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    height: 26px;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    background-color: rgb(0,0,0,0);
+
+}
+
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+    width: 100%;
+
+    border: none;
+   
+    border-color:  #4f868e;
+}
+
+.dropdown-content {
+  position: relative;
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    width: 100%;
+
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 2;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd}
+
+.show {display:block;}
+
+
+
+.bottomContainer {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+
+  min-height: 5.45%;
+  z-index: 1;
+  opacity: 0;
+  align-items: center;
+
+  background-color: rgb(128,128,128,0.4);
+
+  border-radius: 0px 0px 0px 0px;
+
+}
+
+
+.addButton{
+
+  display: block;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: 0 auto;
+  border:solid;
+  background-color: #AD951E;
+  border-color: #AD951E;
+  font-size: 14px;
+  cursor: pointer;
+  color:#502706;
+  border-radius: 0px 0px 0px 0px;
+  height: 30px;
+
+  width: 100%;
+  height: 30px;
+
+}
+
+.cardAreaContainer{
+  display: block;
+  position: absolute;
+  top:9.55%;
+
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+
+  min-height: 85%;
+  background-color: purple;
+
+  opacity: 0;
+}
+
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
+}
+
+
+@-webkit-keyframes changeWidthToFull {
+  0% {
+      max-width: 70%;
+  }
+  100% {
+      max-width: 100%;
+  }
+}
+
+@keyframes changeWidthToFull {
+  0% {
+      max-width: 70%;
+  }
+  100% {
+      max-width: 100%;
+  }
+}
+
+.changeWidthToFull {
+  -webkit-animation-name: changeWidthToFull;
+  animation-name: changeWidthToFull;
+}
+
+@-webkit-keyframes slideDownFromTop {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 100px, 0);
+    transform: translate3d(0, 100px, 0);
+  }
+}
+
+@keyframes slideDownFromTop {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 100px, 0);
+    transform: translate3d(0, 100px, 0);
+  }
+}
+
+.slideDownFromTop {
+  -webkit-animation-name: slideDownFromTop;
+  animation-name: slideDownFromTop;
+}
+
+@-webkit-keyframes slideUpFromCorner {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 22%;
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpFromCorner {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 22%;
+    opacity: 1;
+  }
+}
+
+.slideUpFromCorner {
+  -webkit-animation-name: slideUpFromCorner;
+  animation-name: slideUpFromCorner;
+}
+
+@-webkit-keyframes changeHeightToExpanded {
+  0% {
+      min-height: 5.45%;
+  }
+  100% {
+      min-height: 30%;
+  }
+}
+
+@keyframes changeHeightToExpanded {
+  0% {
+      min-height: 5.45%;
+  }
+  100% {
+      min-height: 30%;
+  }
+}
+
+.changeHeightToExpanded {
+  -webkit-animation-name: changeHeightToExpanded;
+  animation-name: changeHeightToExpanded;
+}
+
+@-webkit-keyframes shrinkHeightToExpanded {
+  0% {
+      min-height: 85%;
+  }
+  100% {
+      min-height: 60.45%;
+  }
+}
+
+@keyframes shrinkHeightToExpanded {
+  0% {
+      min-height: 85%;
+  }
+  100% {
+      min-height: 60.45%;
+  }
+}
+
+.shrinkHeightToExpanded {
+  -webkit-animation-name: shrinkHeightToExpanded;
+  animation-name: shrinkHeightToExpanded;
+}
+
+
+@-webkit-keyframes changeHeightToCollapsed {
+  0% {
+      min-height: 30%;
+  }
+  100% {
+      min-height: 5.45%;
+  }
+}
+
+@keyframes changeHeightToCollapsed {
+  0% {
+      min-height: 30%;
+  }
+  100% {
+      min-height: 5.45%;
+  }
+}
+
+.changeHeightToCollapsed {
+  -webkit-animation-name: changeHeightToCollapsed;
+  animation-name: changeHeightToCollapsed;
+}
+
+@-webkit-keyframes shrinkHeightToCollapsed {
+  0% {
+      min-height: 60.45%;
+  }
+  100% {
+      min-height: 85%;
+  }
+}
+
+@keyframes shrinkHeightToCollapsed {
+  0% {
+      min-height: 60.45%;
+  }
+  100% {
+      min-height: 85%;
+  }
+}
+
+.shrinkHeightToCollapsed {
+  -webkit-animation-name: shrinkHeightToCollapsed;
+  animation-name: shrinkHeightToCollapsed;
+}
+
+@-webkit-keyframes slideUpToTop {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, -100px, 0);
+    transform: translate3d(0, -100px, 0);
+  }
+}
+
+@keyframes slideUpToTop {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, -100px, 0);
+    transform: translate3d(0, -100px, 0);
+  }
+}
+
+.slideUpToTop {
+  -webkit-animation-name: slideUpToTop;
+  animation-name: slideUpToTop;
+}
+
+@-webkit-keyframes changeWidthBackToInitial {
+  0% {
+      max-width: 100%;
+  }
+  100% {
+      max-width: 70%;
+  }
+}
+
+@keyframes changeWidthBackToInitial {
+  0% {
+      max-width: 100%;
+  }
+  100% {
+      max-width: 70%;
+  }
+}
+
+.changeWidthBackToInitial {
+  -webkit-animation-name: changeWidthBackToInitial;
+  animation-name: changeWidthBackToInitial;
+}
+
+
+
+

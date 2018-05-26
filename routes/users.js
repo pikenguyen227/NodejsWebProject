@@ -8,19 +8,43 @@ var tempDB = mongoose.connection;
 var User = require('../models/user');
 
 // Register
-router.get('/register', function(req, res) {
+router.get('/register', ensureAuthenticatedRegister ,function(req, res) {
 	res.render('register');
 });
 
-// Logged in
-router.get('/home', function(req, res) {
+router.get('/index', ensureAuthenticatedRegister ,function(req, res) {
 	res.render('index');
 });
+
+function ensureAuthenticatedRegister(req, res, next){
+	if (req.isAuthenticated()){
+		res.redirect('/users/register');
+	}
+	else
+	{
+		return next();
+	}
+}
 
 // Login
 router.get('/login', function(req, res) {
 	res.render('login');
 });
+
+// Student Dashboard
+router.get('/dashboard',ensureAuthenticatedLogin, function(req, res){
+	res.render('student_dashboard');
+})
+
+function ensureAuthenticatedLogin(req, res, next){
+	if (req.isAuthenticated()){
+		return next();
+	}
+	else
+	{
+		res.redirect('/users/login');
+	}
+}
 
 // Register
 router.post('/register', function(req, res) {
@@ -88,7 +112,9 @@ passport.use(new LocalStrategy({ usernameField: 'email', passwordField: 'passwor
 				if (err) throw err;
 				if (isMatch) {
 					return done(null, user);
-				} else {
+				} 
+				else 
+				{
 					return done(null, false, { message: 'Invalid password' });
 				}
 			});
@@ -107,10 +133,22 @@ passport.deserializeUser(function (id, done) {
 });
 
 router.post('/login',
-	passport.authenticate('local', { successRedirect: '/users/home', failureRedirect: '/users/login', failureFlash: true }),
+	passport.authenticate('local', { successRedirect: '/users/dashboard', failureRedirect: '/users/login', failureFlash: true }),
 	function (req, res) {
-		res.redirect('/users/home');
+		res.redirect('/users/dashboard');
 	});
 
 
+router.get('/logout',function(req,res)
+{
+	req.logout();
+	res.redirect('/users/login');
+});
+
 module.exports = router;
+
+
+
+
+
+
